@@ -1,2 +1,2 @@
-# atm_system_server
-ATM system
+# atm_system
+ATM System - server side
