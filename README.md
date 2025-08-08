@@ -14,9 +14,9 @@ In-Memory ATM Backend :
 Data Structure Design : 
 2 main data structures:
 accounts dictionary:
-  Maps account_number → Account info (password hash, balance, timestamps).
+   - Maps account_number → Account info (password hash, balance, timestamps).
 actions dictionary:
-  Maps account_number → list of Action objects representing deposits & withdrawals.
+    - Maps account_number → list of Action objects representing deposits & withdrawals.
 * I chosen to use dictinaries keyed by "account_number" in order to:
     - Enables fast lookups.
     - Organizes data per user cleanly.
@@ -26,7 +26,7 @@ actions dictionary:
 * Action stores immutable logs of money movements.
 
 Modular code structure :
-The code is organized into multiple files:
+- The code is organized into multiple files:
     * auth.py: handles user registration and login
     * services.py: contains business logic for deposit, withdrawal, balance retrieval
     * models.py: defines in-memory data structures and account password hashing
