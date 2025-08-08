@@ -13,10 +13,10 @@ In-Memory ATM Backend :
 
 Data Structure Design : 
 2 main data structures:
-accounts dictionary:
-   - Maps account_number → Account info (password hash, balance, timestamps).
-actions dictionary:
-    - Maps account_number → list of Action objects representing deposits & withdrawals.
+* accounts dictionary:
+    * Maps account_number → Account info (password hash, balance, timestamps).
+* actions dictionary:
+    * Maps account_number → list of Action objects representing deposits & withdrawals.
 * I chosen to use dictinaries keyed by "account_number" in order to:
     - Enables fast lookups.
     - Organizes data per user cleanly.
@@ -33,12 +33,12 @@ Modular code structure :
     * app.py: configures Flask app and registers routes
 
 REST API Design :
-POST /auth/register: Create new account with unique account_number and password.
-POST /auth/login: Login with credentials to receive JWT.
-GET /accounts/{account_number}/balance: Get current balance.
-POST /accounts/{account_number}/deposit: Deposit money.
-POST /accounts/{account_number}/withdraw: Withdraw money.
-GET /accounts/{account_number}/actions: Get transaction history (optional, added for completeness).
+* POST /auth/register: Create new account with unique account_number and password.
+* POST /auth/login: Login with credentials to receive JWT.
+* GET /accounts/{account_number}/balance: Get current balance.
+* POST /accounts/{account_number}/deposit: Deposit money.
+* POST /accounts/{account_number}/withdraw: Withdraw money.
+* GET /accounts/{account_number}/actions: Get transaction history (optional, added for completeness).
 
 Logging Design :
 Centralized logger instance configured with timestamps and severity levels.
