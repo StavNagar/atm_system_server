@@ -1,8 +1,9 @@
+import os
 from flask import Flask
 from flask_jwt_extended import JWTManager
+from config import Config
 from src.auth import auth_bp
 from src.services import account_bp
-from config import Config
 
 def create_app():
     app = Flask(__name__)
@@ -17,4 +18,4 @@ def create_app():
 
 if __name__ == "__main__":
     app = create_app()
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)), debug=True)
